@@ -52,23 +52,29 @@
         </svg>
       </div>
 
-      <div class="info col-12 col-md-3 col-lg-3">
-        <h2>{{ name }}</h2>
-        <h3 v-if="nativeName !== name">{{ nativeName }}</h3>
-        <img :src="flag" :alt="name">
-        <p>Capitale: {{ capital }}</p>
-        <p>Population: {{ population }}</p>
-        <p>Superficie: {{ area }} km²</p>
-        <p>Monnaie: {{ currenciesName }} / {{ currenciesSymbol }}</p>
-      </div>
-    </div>
+      <CountryInfo
+        :name="name"
+        :nativeName="nativeName"
+        :flag="flag"
+        :capital="capital"
+        :population="population"
+        :area="area"
+        :currenciesName="currenciesName"
+        :currenciesSymbol="currenciesSymbol"
+      />
 
+    </div>
   </div>
 </template>
 
 <script>
+import CountryInfo from "../components/CountryInfo"
+
 export default {
   name: "Europe",
+  components: {
+    CountryInfo
+  },
   data() {
     return {
       name: 'France',
@@ -106,68 +112,48 @@ export default {
 </script>
 
 <style>
+  /*.active {
+    opacity: 1;
+  }
 
-/*.active {
-  opacity: 1;
-}
+  .notActive {
+    opacity: 0.8;
+  }*/
 
-.notActive {
-  opacity: 0.8;
-}*/
+  g {
+    opacity: 0.8;
+  }
 
-g {
-  opacity: 0.8;
-}
+  g:hover {
+    opacity: 1;
+  }
 
-g:hover {
-  opacity: 1;
-}
+  .row {
+    align-items: center;
+    height: 90vh;
+  }
 
-.row {
-  align-items: center;
-  height: 90vh;
-}
-
-.map {
-margin: auto 0;
-}
-
-.info {
-  text-align: left;
+  .map {
   margin: auto 0;
-}
+  }
 
-.info h2 {
-  font-size: 32px;
-}
-
-.info h3 {
-  font-size: 24px;
-}
-
-img {
-  width: 56px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 20px 0;
-}
-
-.cls-1{fill:#f28952;}
-.cls-2{fill:#ffb74e;}
-.cls-3{fill:#41a799;}
-.cls-4{fill:#e57373;}
-.cls-5{fill:#82c683;}
-.cls-6{fill:#7986cc;}
-.cls-7{fill:#dce777;}
-.cls-8{fill:#fa8650;}
-.cls-9{fill:#42a49a;}
-.cls-10{fill:#f46f71;}
-.cls-11{fill:#f59051;}
-.cls-12{fill:#3ea99a;}
-.cls-13{fill:#e67373;}
-.cls-14{fill:#dce776;}
-.cls-15{fill:#4fc2f8;}
-.cls-16{fill:#7984d4;}
-.cls-17{fill:#dde775;}
-.cls-18{fill:#dce775;}
-.cls-19{fill:#85c580;}
+  .cls-1{fill:#f28952;}
+  .cls-2{fill:#ffb74e;}
+  .cls-3{fill:#41a799;}
+  .cls-4{fill:#e57373;}
+  .cls-5{fill:#82c683;}
+  .cls-6{fill:#7986cc;}
+  .cls-7{fill:#dce777;}
+  .cls-8{fill:#fa8650;}
+  .cls-9{fill:#42a49a;}
+  .cls-10{fill:#f46f71;}
+  .cls-11{fill:#f59051;}
+  .cls-12{fill:#3ea99a;}
+  .cls-13{fill:#e67373;}
+  .cls-14{fill:#dce776;}
+  .cls-15{fill:#4fc2f8;}
+  .cls-16{fill:#7984d4;}
+  .cls-17{fill:#dde775;}
+  .cls-18{fill:#dce775;}
+  .cls-19{fill:#85c580;}
 </style>
