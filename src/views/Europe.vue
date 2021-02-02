@@ -85,7 +85,7 @@ export default {
       area: 640679,
       currenciesName: 'Euro',
       currenciesSymbol: '€',
-      isActive: false
+      // isActive: false
     }
   },
   beforeMount(){
