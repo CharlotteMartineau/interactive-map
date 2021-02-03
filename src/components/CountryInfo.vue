@@ -1,12 +1,13 @@
 <template>
   <div class="info col-12 col-md-3 col-lg-3">
-    <h2>{{ name }}</h2>
-    <h3 v-if="nativeName !== name">{{ nativeName }}</h3>
-    <img :src="flag" :alt="name">
-    <p>Capitale: {{ capital }}</p>
-    <p>Population: {{ population }}</p>
-    <p>Superficie: {{ area }} km²</p>
-    <p>Monnaie: {{ currenciesName }} / {{ currenciesSymbol }}</p>
+    <h2>{{ data.name }}</h2>
+    <h2 v-if="!data.name">Choisis un pays sur la carte !</h2>
+    <h3 v-if="data.nativeName !== data.name">{{ data.nativeName }}</h3>
+    <img :src="data.flag" :alt="data.name">
+    <p>Capitale: {{ data.capital }}</p>
+    <p>Population: {{ data.population }}</p>
+    <p>Superficie: {{ data.area }} km²</p>
+    <p>Monnaie: {{ data.currenciesName }} <span v-if="data.currenciesSymbol">/</span> {{ data.currenciesSymbol }}</p>
   </div>
 </template>
 
@@ -14,14 +15,7 @@
 export default {
   name: 'CountryInfo',
   props: {
-    name: String,
-    nativeName: String,
-    flag: String,
-    capital: String,
-    population: Number,
-    area: Number,
-    currenciesName: String,
-    currenciesSymbol: String,
+    data: Object,
   }
 }
 </script>
