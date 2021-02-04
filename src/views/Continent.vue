@@ -3,7 +3,7 @@
     <div class="row">
 
       <div class="map col-12 col-md-9 col-lg-9">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1104.08 729.84">
+        <svg xmlns="http://www.w3.org/2000/svg" :viewBox="getViewBox">
           <title> {{ currentRouteName }} </title>
             <g v-for="country in countries" :key="country.id" :id="country.id" @click="getCountry($event)" v-html="country.svg"></g>
           </svg>
@@ -27,7 +27,16 @@ export default {
   },
   data() {
     return {
-      countryInfo: {}
+      countryInfo: {},
+      viewBox: {
+        europe: "0 0 1104.08 729.84",
+        oceania: "0 0 755.1 583.07",
+        asia: "0 0 818.75 662.52",
+        southAmerica: "0 0 524.03 860.44",
+        africa: "0 0 942.75 933.66",
+        northAmerica: "0 0 752.95 813.08",
+        centralAmerica:"0 0 1248.46 599.86"
+      }
     }
   },
   computed: {
@@ -36,6 +45,9 @@ export default {
     },
     countries() {
       return countryData[this.currentRouteName];
+    },
+    getViewBox() {
+      return this.viewBox[this.currentRouteName];
     }
   },
   methods: {
@@ -46,7 +58,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
   g {
     opacity: 1;
   }
@@ -61,7 +73,10 @@ export default {
   }
 
   .map {
-  margin: auto 0;
+    margin: auto 0;
+    svg {
+      max-height: 80vh;
+    }
   }
 
   .cls-1{fill:#f28952;}
