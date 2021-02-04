@@ -25,6 +25,26 @@ const routes = [
     path: '/asia',
     name: 'asia',
     component: Continent
+  },
+  {
+    path: '/africa',
+    name: 'africa',
+    component: Continent
+  },
+  {
+    path: '/south-america',
+    name: 'southAmerica',
+    component: Continent
+  },
+  {
+    path: '/north-america',
+    name: 'northAmerica',
+    component: Continent
+  },
+  {
+    path: '/central-america',
+    name: 'centralAmerica',
+    component: Continent
   }
 ]
 
