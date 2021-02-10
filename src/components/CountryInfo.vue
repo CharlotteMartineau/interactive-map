@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
   .info {
     text-align: left;
     margin: auto 0;
