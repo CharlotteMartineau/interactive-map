@@ -1,10 +1,10 @@
 <template>
-  <div class="search container">
+  <div class="searchCountry container">
 
     <Search @name-checked="checkName"/>
 
     <div class="country" v-for="country in countries" :key="country.alpha3Code">
-      <p>{{ country.translations.fr }}</p>
+      <router-link :to="{ name: 'country', params: { name: country.translations.fr }}"><p>{{ country.translations.fr }}</p></router-link>
     </div>
 
   </div>
@@ -15,7 +15,7 @@ import axios from "axios";
 import Search from "../components/Search"
 
 export default {
-  name: "search",
+  name: "searchCountry",
   components: {
     Search
   },

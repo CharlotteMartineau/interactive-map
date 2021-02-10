@@ -2,7 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Continent from '../views/Continent.vue'
-import Search from '../views/Search.vue'
+import SearchCountry from '../views/SearchCountry.vue'
+import Country from '../views/Country.vue'
 
 Vue.use(VueRouter)
 
@@ -50,7 +51,12 @@ const routes = [
   {
     path: '/search',
     name: 'search',
-    component: Search
+    component: SearchCountry
+  },
+  {
+    path: '/country/:name',
+    name: 'country',
+    component: Country
   }
 ]
 
