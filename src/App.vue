@@ -7,7 +7,8 @@
   </div>
 </template>
 
-<style lang="scss">
+
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -18,14 +19,21 @@
 
 #nav {
   padding: 30px;
-
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   a {
     font-weight: bold;
     color: #2c3e50;
+    margin-right: 20px;
+    text-decoration: none;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #41a799;
     }
+    &:hover {
+    color: #41a799;
+  }
   }
 }
 </style>

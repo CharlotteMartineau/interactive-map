@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Continent from '../views/Continent.vue'
+import Search from '../views/Search.vue'
 
 Vue.use(VueRouter)
 
@@ -45,6 +46,11 @@ const routes = [
     path: '/central-america',
     name: 'centralAmerica',
     component: Continent
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: Search
   }
 ]
 
