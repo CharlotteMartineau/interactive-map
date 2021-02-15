@@ -55,26 +55,26 @@ h1 {
 }
 
 .cls-3{
-  fill:#f28952;
+  fill: #f28952;
 }
 
 .cls-4{
-  fill:#ffb74e;
+  fill: #ffb74e;
 }
 
 .cls-5{
-  fill:#41a799;
+  fill: #41a799;
 }
 
 .cls-6{
-  fill:#7984d4;
+  fill: #7984d4;
 }
 
 .cls-7{
-  fill:#dce775;
+  fill: #dce775;
 }
 
 .cls-8{
-  fill:#f26746;
+  fill: #f26746;
 }
 </style>
