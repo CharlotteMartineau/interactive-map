@@ -1,5 +1,16 @@
 <template>
   <div class="country container">
-    <h2>{{ $route.params.name }}</h2>
+    <CountryDetails></CountryDetails>
   </div>
 </template>
+
+<script>
+import CountryDetails from "../components/CountryDetails";
+
+export default {
+  name: 'country',
+  components: {
+    CountryDetails
+  },
+}
+</script>

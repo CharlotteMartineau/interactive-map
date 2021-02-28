@@ -4,7 +4,7 @@
     <Search @name-checked="checkName"/>
 
     <div class="country" v-for="country in countries" :key="country.alpha3Code">
-      <router-link :to="{ name: 'country', params: { name: country.translations.fr }}"><p>{{ country.translations.fr }}</p></router-link>
+      <router-link :to="{ name: 'country', params: { countryCode: country.alpha3Code }}"><p>{{ country.translations.fr }}</p></router-link>
     </div>
 
   </div>
@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return {
-      countries: []
+      countries: [],
     }
   },
   methods: {
@@ -35,7 +35,7 @@ export default {
       .catch(err => {
         console.log(err);
       })
-    }
-  }
+    },
+  },
 };
 </script>

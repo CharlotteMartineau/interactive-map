@@ -54,9 +54,10 @@ const routes = [
     component: SearchCountry
   },
   {
-    path: '/country/:name',
+    path: '/country/:countryCode',
     name: 'country',
-    component: Country
+    component: Country,
+    props: true
   }
 ]
 
